@@ -47,8 +47,11 @@ int main (string[] args)
     {
     case "generate":
         KeyPair kp = KeyPair.random();
-        writeln("Private seed:    ", kp.seed.toString());
-        writeln("Public address:  ", kp.address.toString());
+        writeln("Private seed:          ", kp.seed.toString());
+        writeln("Private seed (raw):    ", kp.seed.toRawString());
+        writeln("Private address (raw): ", kp.secret.toString());
+        writeln("Public address:        ", kp.address.toString());
+        writeln("Public address (raw):  ", kp.address.toRawString());
         break;
 
     case "pubkey":
@@ -58,8 +61,11 @@ int main (string[] args)
             return 1;
         }
         KeyPair kp = KeyPair.fromSeed(Seed.fromString(args[2]));
-        writeln("Private seed:    ", kp.seed.toString());
-        writeln("Public address:  ", kp.address.toString());
+        writeln("Private seed:          ", kp.seed.toString());
+        writeln("Private seed (raw):    ", kp.seed.toRawString());
+        writeln("Private address (raw): ", kp.secret.toString());
+        writeln("Public address:        ", kp.address.toString());
+        writeln("Public address (raw):  ", kp.address.toRawString());
         break;
 
     case "sign":

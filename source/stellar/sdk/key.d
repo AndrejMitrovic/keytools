@@ -78,6 +78,12 @@ public struct PublicKey
     /*private*/ BitBlob!(crypto_sign_PUBLICKEYBYTES * 8) data;
     alias data this;
 
+    string toRawString ( ) const
+    {
+        import std.conv;
+        return data.to!string;
+    }
+
     /// Uses Stellar's representation instead of hex
     public string toString () const
     {
@@ -160,6 +166,12 @@ public struct Seed
 
     /*private*/ BitBlob!(crypto_sign_SEEDBYTES * 8) data;
     alias data this;
+
+    string toRawString ( ) const
+    {
+        import std.conv;
+        return data.to!string;
+    }
 
     /// Uses Stellar's representation instead of hex
     public string toString () const
