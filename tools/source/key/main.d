@@ -95,8 +95,7 @@ int main (string[] args)
             return 1;
         }
         writeln("Result: ", result);
-        if (result.all!((ubyte c) => char(c).isASCII))
-            writeln("Result as string: ", cast(const(char)[])result);
+        writeln("Result as string: ", cast(const(char)[])result);
         break;
 
     default:
